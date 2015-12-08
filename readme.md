@@ -2,6 +2,7 @@
 
 > Generate a binary wrapper around your programs using [bin-wrapper](https://github.com/kevva/bin-wrapper)
 s
+
 Based on [generator-nm](https://github.com/sindresorhus/generator-nm) and  [flow-bin](https://github.com/flowtype/flow-bin)
 
 ## Install
