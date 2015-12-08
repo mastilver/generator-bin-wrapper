@@ -95,7 +95,7 @@ function askBinaries(cb) {
 
 	this.prompt([
 		{
-			name: 'platform',
+			name: 'os',
 			message: 'Which os your binary support?',
 			type: 'list',
 			choices: ['darwin', 'freebsd', 'linux', 'sunos', 'win32']
