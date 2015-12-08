@@ -3,11 +3,12 @@ import test from 'ava';
 import {test as helpers} from 'yeoman-generator';
 import assert from 'yeoman-assert';
 import pify from 'pify';
+import P from 'pinkie-promise'
 
 let generator;
 
 test.beforeEach(async () => {
-	await pify(helpers.testDirectory)(path.join(__dirname, 'temp'));
+	await pify(helpers.testDirectory, P)(path.join(__dirname, 'temp'));
 	generator = helpers.createGenerator('bin-wrapper:app', ['../app'], null, {skipInstall: true});
 });
 
@@ -18,7 +19,7 @@ test.serial('generates expected files', async () => {
 		website: 'test.com'
 	});
 
-	await pify(generator.run.bind(generator))();
+	await pify(generator.run.bind(generator), P)();
 
 	assert.file([
 		'.editorconfig',

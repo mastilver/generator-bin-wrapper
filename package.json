@@ -42,6 +42,7 @@
   "devDependencies": {
     "ava": "*",
     "pify": "^2.2.0",
+    "pinkie-promise": "^2.0.0",
     "xo": "*",
     "yeoman-assert": "^2.0.0"
   },
