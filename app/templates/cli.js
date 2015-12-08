@@ -1,20 +1,7 @@
-#!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var <%= camelModuleName %> = require('./');
+var spawn = require('child_process').spawn;
+var input = process.argv.slice(2);
+var bin = require('./');
 
-var cli = meow([
-	'Usage',
-	'  $ <%= moduleName %> [input]',
-	'',
-	'Options',
-	'  --foo  Lorem ipsum. [Default: false]',
-	'',
-	'Examples',
-	'  $ <%= moduleName %>',
-	'  unicorns & rainbows',
-	'  $ <%= moduleName %> ponies',
-	'  ponies & rainbows'
-]);
-
-console.log(<%= camelModuleName %>(cli.input[0] || 'unicorns'));
+spawn(bin, input, {stdio: 'inherit'})
+	.on('exit', process.exit);

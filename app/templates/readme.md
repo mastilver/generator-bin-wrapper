@@ -1,43 +1,6 @@
 # <%= moduleName %> [![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>)
 
-> My <%= superb %> module
-
-
-## Install
-
-```
-$ npm install --save <%= moduleName %>
-```
-
-
-## Usage
-
-```js
-const <%= camelModuleName %> = require('<%= moduleName %>');
-
-<%= camelModuleName %>('unicorns');
-//=> 'unicorns & rainbows'
-```
-
-
-## API
-
-### <%= camelModuleName %>(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.<% if (cli) { %>
+> Binary wrapper for <%= softwareName %>
 
 
 ## CLI
@@ -47,20 +10,24 @@ $ npm install --global <%= moduleName %>
 ```
 
 ```
-$ <%= moduleName %> --help
+$ <%= softwareName %> --help
+```
 
-  Usage
-    <%= moduleName %> [input]
 
-  Options
-    --foo  Lorem ipsum. [Default: false]
+## API
 
-  Examples
-    $ <%= moduleName %>
-    unicorns & rainbows
-    $ <%= moduleName %> ponies
-    ponies & rainbows
-```<% } %>
+```
+$ npm install --save <%= moduleName %>
+```
+
+```js
+const execFile = require('child_process').execFile;
+const <%= softwareName %> = require('<%= moduleName %>');
+
+execFile(<%= softwareName %>, ['--version'], (err, stdout) => {
+	console.log(stdout);
+});
+```
 
 
 ## License

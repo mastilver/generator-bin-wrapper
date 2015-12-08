@@ -1,7 +1,7 @@
 import test from 'ava';
-import fn from './';
+import binCheck from 'bin-check';
+import flow from './';
 
-test('title', t => {
-	t.is(fn('unicorns'), 'unicorns & rainbows');
-	t.end();
+test('returns path to binary and verify that it is working', async t => {
+	t.true(await binCheck(flow, ['--version']));
 });

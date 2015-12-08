@@ -1,36 +1,44 @@
 {
   "name": "<%= moduleName %>",
-  "version": "0.0.0",
-  "description": "My <%= superb %> module",
+  "version": "<%= softwareVersion %>",
+  "description": "Binary wrapper for <%= softwareName %>",
   "license": "MIT",
   "repository": "<%= githubUsername %>/<%= moduleName %>",
   "author": {
     "name": "<%= name %>",
     "email": "<%= email %>",
     "url": "<%= humanizedWebsite %>"
-  },<% if (cli) { %>
-  "bin": "cli.js",<% } %>
+  },
+  "bin": {
+    "<%= softwareName %>": "cli.js"
+  },
+  "scripts": {
+    "test": "npm run postinstall && xo && ava",
+    "postinstall": "node lib/install.js"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-    "test": "xo && ava"
-  },
   "files": [
-    "index.js"<% if (cli) { %>,
-    "cli.js"<% } %>
+    "index.js",
+    "cli.js",
+    "lib"
   ],
-  "keywords": [<% if (cli) { %>
+  "keywords": [
     "cli-app",
-    "cli",<% } %>
-    ""
+    "cli",
+    "bin",
+    "binary",
+    "wrapper"
   ],
-  "dependencies": {<% if (cli) { %>
-    "meow": "^3.6.0"
-  <% } %>},
+  "dependencies": {
+    "bin-wrapper": "^2.0.0",
+    "logalot": "^2.0.0"
+  },
   "devDependencies": {
-    "ava": "^0.5.0",
-    "xo": "^0.11.2"
+    "ava": "*",
+    "bin-check": "^3.0.0",
+    "xo": "*"
   },
   "xo": {
     "ignores": [

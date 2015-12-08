@@ -1,18 +1,13 @@
-# generator-nm [![Build Status](https://travis-ci.org/sindresorhus/generator-nm.svg?branch=master)](https://travis-ci.org/sindresorhus/generator-nm)
+# generator-bin-wrapper [![Build Status](https://travis-ci.org/mastilver/generator-bin-wrapper.svg?branch=master)](https://travis-ci.org/mastilver/generator-bin-wrapper)
 
-> Scaffold out a [node module](https://github.com/sindresorhus/node-module-boilerplate)
-
-Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
-
-This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
-
-![](screenshot.png)
-
+> Generate a binary wrapper around your programs using [bin-wrapper](https://github.com/kevva/bin-wrapper)
+s
+Based on [generator-nm](https://github.com/sindresorhus/generator-nm) and  [flow-bin](https://github.com/flowtype/flow-bin)
 
 ## Install
 
 ```
-$ npm install --global generator-nm
+$ npm install --global generator-bin-wrapper
 ```
 
 
@@ -21,15 +16,10 @@ $ npm install --global generator-nm
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo nm
+$ yo bin-wrapper
 ```
-
-
-## Tip
-
-Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CLI.
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Thomas Sileghem](http://mastilver.com)
